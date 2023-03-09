@@ -22,7 +22,45 @@ export { }
 // }
 // sum(10, 20)
 
-const project: { id: number, name: string, image: string, link: string, status: boolean } = {
+
+
+const arrNumber: number[] = [1, 2, 3]
+const arrMix: Array<{ id: number, name: string }> = [
+    { id: 1, name: "abc" }
+]
+
+const projectList: { id: number, name: string }[] = [
+    { id: 1, name: "Du an mau" },
+    { id: 2, name: "Du an 1" }
+]
+const getProject = (data: { id: number, name: string }[]): { id: number, name: string }[] => {
+    return data;
+}
+
+// định nghĩa kiểu dữ liệu với interface
+/* Object */
+// const project: { id: number, name: string, image: string, link: string, status: boolean } = {
+//     id: 1,
+//     name: "Du an 1",
+//     image: "https://picsum.photos/200/100",
+//     link: "https://picsum.photos/100/200",
+//     status: true
+// }
+
+// function getData(props: { id: number, name: string, image: string, link: string, status: boolean }): { id: number, name: string, image: string, link: string, status: boolean } {
+//     console.log(props);
+//     return props;
+// }
+// getData(project)
+
+interface Project {
+    id: number,
+    name: string,
+    image: string,
+    link: string,
+    status: boolean
+}
+const project: Project = {
     id: 1,
     name: "Du an 1",
     image: "https://picsum.photos/200/100",
@@ -30,8 +68,11 @@ const project: { id: number, name: string, image: string, link: string, status: 
     status: true
 }
 
-function getData(props: { id: number, name: string, image: string, link: string, status: boolean }): { id: number, name: string, image: string, link: string, status: boolean } {
+function getData(props: Project): Project {
     console.log(props);
     return props;
 }
 getData(project)
+/* Array */
+
+/* Function */ 
