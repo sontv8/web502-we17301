@@ -96,4 +96,30 @@ const projectList: Project[] = [
     { id: 1, name: "abc", image: "ac", link: "abc", status: "true" },
     { id: 1, name: "abc", image: "ac", link: "abc" }
 ]
+/* Function */
+
+// const sum = (a: number, b: number): number => {
+//     return 123
+// }
+
+interface SumFunction {
+    (a: number, b: number): number
+}
+
+const sum: SumFunction = (a, b) => {
+    return 123
+}
+sum(10, 20)
+
+interface AddFunction {
+    (data: Project[]): Project[]
+}
+const add: AddFunction = (a) => {
+    return a
+}
+add(projectList)
+
+// định nghĩa kiểu dữ liệu type
+/* Object */
+/* Array */
 /* Function */ 
