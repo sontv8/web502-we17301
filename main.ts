@@ -29,15 +29,16 @@ const arrMix: Array<{ id: number, name: string }> = [
     { id: 1, name: "abc" }
 ]
 
-const projectList: { id: number, name: string }[] = [
-    { id: 1, name: "Du an mau" },
-    { id: 2, name: "Du an 1" }
-]
-const getProject = (data: { id: number, name: string }[]): { id: number, name: string }[] => {
-    return data;
-}
+
 
 // định nghĩa kiểu dữ liệu với interface
+/*
+    interface hỗ trợ các thuộc tính sau
+        required
+        optional
+
+*/
+
 /* Object */
 // const project: { id: number, name: string, image: string, link: string, status: boolean } = {
 //     id: 1,
@@ -53,26 +54,46 @@ const getProject = (data: { id: number, name: string }[]): { id: number, name: s
 // }
 // getData(project)
 
+// interface Project {
+//     id: number,
+//     name: string,
+//     image: string,
+//     link: string,
+//     status: boolean
+// }
+// const project: Project = {
+//     id: 1,
+//     name: "Du an 1",
+//     image: "https://picsum.photos/200/100",
+//     link: "https://picsum.photos/100/200",
+//     status: true
+// }
+
+// function getData(props: Project): Project {
+//     console.log(props);
+//     return props;
+// }
+// getData(project)
+
+
+/* Array */
+// const projectList: { id: number, name: string }[] = [
+//     { id: 1, name: "Du an mau" },
+//     { id: 2, name: "Du an 1" }
+// ]
+// const getProject = (data: { id: number, name: string }[]): { id: number, name: string }[] => {
+//     return data;
+// }
+
 interface Project {
     id: number,
     name: string,
     image: string,
     link: string,
-    status: boolean
+    status?: boolean | string
 }
-const project: Project = {
-    id: 1,
-    name: "Du an 1",
-    image: "https://picsum.photos/200/100",
-    link: "https://picsum.photos/100/200",
-    status: true
-}
-
-function getData(props: Project): Project {
-    console.log(props);
-    return props;
-}
-getData(project)
-/* Array */
-
+const projectList: Project[] = [
+    { id: 1, name: "abc", image: "ac", link: "abc", status: "true" },
+    { id: 1, name: "abc", image: "ac", link: "abc" }
+]
 /* Function */ 
