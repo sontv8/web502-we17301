@@ -121,5 +121,51 @@ add(projectList)
 
 // định nghĩa kiểu dữ liệu type
 /* Object */
+// type Product = {
+//     id: number,
+//     name: string,
+//     image: string,
+//     link: string,
+//     status?: boolean | string
+// }
 /* Array */
-/* Function */ 
+type TProductList = {
+    id: number,
+    name: string,
+    image: string,
+    link: string,
+    status?: boolean | string
+}[]
+interface IProduct {
+
+}
+/* Function */
+// type GetFunction = (data: ProductList) => number
+
+
+// interface IPerson {
+//     id: number,
+//     name: string
+// }
+// interface IEmployee extends IPerson {
+//     email: string
+// }
+// const sontv: IEmployee = {
+//     id: 999999,
+//     name: "sontv",
+//     email: "sontv@gmail.com"
+// }
+
+type IPerson = {
+    id: number,
+    name: string
+}
+type IEmployee = {
+    email: string
+}
+type TManager = IPerson & IEmployee
+const sontv: TManager = {
+    id: 999999,
+    name: "sontv",
+    email: "sontv@gmail.com"
+}
