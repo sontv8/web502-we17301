@@ -1,4 +1,3 @@
-export { }
 // let username: string;
 // username = "datlt"
 // console.log(username);
@@ -169,3 +168,11 @@ const sontv: TManager = {
     name: "sontv",
     email: "sontv@gmail.com"
 }
+
+interface IAdmin {
+
+}
+
+type TAdmin = {
+
+}[]

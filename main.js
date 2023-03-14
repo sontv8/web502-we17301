@@ -1,5 +1,3 @@
-"use strict";
-// exports.__esModule = true;
 // let username: string;
 // username = "datlt"
 // console.log(username);
@@ -18,14 +16,24 @@
 //     return result
 // }
 // sum(10, 20)
-var project = {
-    id: 1,
-    name: "Du an 1",
-    image: "https://picsum.photos/200/100",
-    link: "https://picsum.photos/100/200",
-    status: true
+var arrNumber = [1, 2, 3];
+var arrMix = [
+    { id: 1, name: "abc" }
+];
+var projectList = [
+    { id: 1, name: "abc", image: "ac", link: "abc", status: "true" },
+    { id: 1, name: "abc", image: "ac", link: "abc" }
+];
+var sum = function (a, b) {
+    return 123;
 };
-function getData(props) {
-    console.log(props);
-}
-getData(project);
+sum(10, 20);
+var add = function (a) {
+    return a;
+};
+add(projectList);
+var sontv = {
+    id: 999999,
+    name: "sontv",
+    email: "sontv@gmail.com"
+};
