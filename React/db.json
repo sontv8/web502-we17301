@@ -15,6 +15,26 @@
     {
       "name": "new product ",
       "id": 4
+    },
+    {
+      "name": "new product 2",
+      "price": "5000",
+      "id": 5
+    },
+    {
+      "name": "abcd",
+      "price": "5000",
+      "id": 6
+    },
+    {
+      "name": "hhhh",
+      "price": "400",
+      "id": 7
+    },
+    {
+      "name": "hhhh",
+      "price": "500",
+      "id": 8
     }
   ]
 }
