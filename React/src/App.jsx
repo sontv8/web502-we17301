@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import { Route, Routes } from 'react-router-dom'
 import ProductPage from './pages/Product'
 import ProductDetailPage from './pages/ProductDetail'
+import { deleteProduct } from './api/product'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -13,11 +14,17 @@ function App() {
       .then(response => response.json())
       .then(data => setProducts(data))
   }, [])
+  const onHandleRemove = (id) => {
+    // fetch('http://localhost:3000/products/' + id, {
+    //   method: 'DELETE'
+    // }).then(() => setProducts(products.filter(item => item.id !== id)))
+    deleteProduct(id).then(() => setProducts(products.filter(item => item.id !== id)))
+  }
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/products' element={<ProductPage products={products} />} />
+        <Route path='/products' element={<ProductPage products={products} onRemove={onHandleRemove} />} />
         <Route path='/products/:id' element={<ProductDetailPage />} />
       </Routes>
 
