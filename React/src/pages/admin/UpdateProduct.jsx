@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const UpdateProductPage = (props) => {
-    const { id } = useParams()
-    const [product, setProduct] = useState({})
-    const [inputValue, setInputValue] = useState({})
-    useEffect(() => {
-        const currentProduct = props.products.find(item => item.id == id)
-        setProduct(currentProduct)
+    const { id } = useParams() // lấy id từ url
+    const [product, setProduct] = useState({}) // khởi tạo state để lưu giá trị input
+    const [inputValue, setInputValue] = useState({}) // khởi tạo state để lưu giá trị input
+    useEffect(() => { // hàm này chạy sau khi render
+        const currentProduct = props.products.find(item => item.id == id) // tìm sản phẩm có id trùng với id trên url
+        setProduct(currentProduct) // gán lại giá trị cho state (product)
     })
-    const onHandleChange = (e) => {
-        const { name, value } = e.target
-        setInputValue({ ...inputValue, [name]: value });
+    const onHandleChange = (e) => { // hàm xử lý sự kiện khi input thay đổi
+        const { name, value } = e.target   // lấy name và value của input
+        setInputValue({ ...inputValue, [name]: value }); // gán lại giá trị cho state (inputValue)
     }
-    const onHandleSubmit = (e) => {
+    const onHandleSubmit = (e) => { // hàm xử lý sự kiện khi submit form
         e.preventDefault()
-        const updateData = { ...product, ...inputValue }
+        const updateData = { ...product, ...inputValue } // gộp 2 object lại với nhau
         /*
             product:
                 id
@@ -26,7 +26,7 @@ const UpdateProductPage = (props) => {
                 name
                 price
         */
-        props.onUpdate(updateData);
+        props.onUpdate(updateData); // gọi hàm onUpdate từ props để cập nhật sản phẩm
     }
     return (
         <div>
