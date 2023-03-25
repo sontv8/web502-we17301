@@ -9,6 +9,9 @@ import { addProduct, deleteProduct, updateProduct } from './api/product'
 import ProductManagementPage from './pages/admin/ProductManagement'
 import AddProductPage from './pages/admin/AddProduct'
 import UpdateProductPage from './pages/admin/UpdateProduct'
+import Dashboard from './pages/admin/Dashboard'
+import Home from './pages/layout/Home'
+import AdminLayout from './pages/layout/AdminLayout'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -32,12 +35,27 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        {/* <Route path='/' element={<HomePage />} />
         <Route path='/products' element={<ProductPage products={products} onRemove={onHandleRemove} />} />
         <Route path='/products/:id' element={<ProductDetailPage />} />
         <Route path='/admin/products' element={<ProductManagementPage products={products} onRemove={onHandleRemove} />} />
         <Route path='/admin/products/add' element={<AddProductPage onAdd={onHandleAdd} />} />
-        <Route path='/admin/products/:id/update' element={<UpdateProductPage products={products} onUpdate={onHandleUpdate} />} />
+        <Route path='/admin/products/:id/update' element={<UpdateProductPage products={products} onUpdate={onHandleUpdate} />} /> */}
+        <Route path='/' element={<Home />}>
+          <Route index element={<HomePage />} /> {/* / - Home */}
+          <Route path='products'>
+            <Route index element={<ProductPage products={products} onRemove={onHandleRemove} />} />
+            <Route path=':id' element={<ProductDetailPage />} /> {/* /products/:id - Detail */}
+          </Route>
+        </Route>
+
+        <Route path='/admin' element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path='products'>
+            <Route index element={<ProductManagementPage products={products} onRemove={onHandleRemove} />} />
+            <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
+          </Route>
+        </Route>
       </Routes>
 
     </div >
