@@ -23,7 +23,7 @@ const ProductManagementPage = (props) => {
                 <tbody>
                     {
                         data.map((item, index) => {
-                            return <tr key={item.id}>
+                            return <tr key={index + 1}>
                                 <td>{index + 1}</td>
                                 <td>{item.name}</td>
                                 <td>

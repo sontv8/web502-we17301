@@ -35,6 +35,11 @@
       "name": "hhhh updated",
       "price": "50000000",
       "id": 8
+    },
+    {
+      "name": "New Product 10",
+      "price": "100",
+      "id": 9
     }
   ]
 }

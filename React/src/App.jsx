@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 // import './App.css'
 import HomePage from './pages/HomePage'
 import { Route, Routes } from 'react-router-dom'
@@ -30,7 +29,7 @@ function App() {
     addProduct(product).then(() => setProducts([...products, product]))
   }
   const onHandleUpdate = (product) => {
-    updateProduct(product)
+    updateProduct(product).then(() => setProducts(products.map(item => item.id === product.id ? product : item)))
   }
   return (
     <div className="App">
@@ -54,6 +53,7 @@ function App() {
           <Route path='products'>
             <Route index element={<ProductManagementPage products={products} onRemove={onHandleRemove} />} />
             <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
+            <Route path=':id/update' element={<UpdateProductPage products={products} onUpdate={onHandleUpdate} />} />
           </Route>
         </Route>
       </Routes>
